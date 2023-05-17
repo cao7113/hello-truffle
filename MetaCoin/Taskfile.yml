@@ -1,0 +1,6 @@
+# https://taskfile.dev
+version: '3'
+tasks:
+  # https://trufflesuite.com/boxes/metacoin/
+  deploy: truffle migrate
+  test: truffle test
