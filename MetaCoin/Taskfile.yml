@@ -2,5 +2,19 @@
 version: '3'
 tasks:
   # https://trufflesuite.com/boxes/metacoin/
-  deploy: truffle migrate
+  compile: truffle compile --all
+  mig: truffle migrate
   test: truffle test
+  dev: truffle develop
+  # .exit to quit
+  console: truffle console
+
+  # using dashboard proxy to deploy through MetaMask then to real blockchains
+  board:  truffle compile --all && truffle dashboard --verbose --host 127.0.0.1
+  dconsole: truffle console --verbose-rpc --url http://127.0.0.1:24012/rpc
+  # below not always works???  TODO: refer more https://trufflesuite.com/docs/truffle/reference/configuration/#dashboard
+  # truffle dashboard --verbose
+  # truffle console --network dashboard
+  dmig: truffle migrate --network dashboard
+
+  net: truffle networks

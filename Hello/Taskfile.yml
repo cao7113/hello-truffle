@@ -1,0 +1,15 @@
+# https://taskfile.dev
+version: '3'
+tasks:
+  # https://trufflesuite.com/boxes/metacoin/
+  compile: truffle compile --all
+  mig: truffle migrate
+  test: truffle test
+  dev: truffle develop
+  # .exit to quit
+  console: truffle console
+
+  # using dashboard proxy to deploy through MetaMask then to real blockchains
+  board:  truffle dashboard
+  dconsole: truffle console --network dashboard
+  dmig: truffle migrate --network dashboard
